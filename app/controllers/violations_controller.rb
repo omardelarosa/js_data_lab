@@ -16,4 +16,8 @@ class ViolationsController < ApplicationController
         end
     end
 
+    def morris
+        
+    end
+
 end
