@@ -8,7 +8,11 @@ class ViolationsController < ApplicationController
     def json
         if params[:zip]
             @violations = Violation.where(:ZIPCODE => params[:zip])
-            render :json
+            #convert instance variable to json
+            render :json => @violations.to_json
+        else
+            #handles lack of query
+            render :json => ["No data"].to_json
         end
     end
 
