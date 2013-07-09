@@ -8,6 +8,7 @@ if ARGV[1]
 else
 	target_file = "./cleaned_data.csv"
 end
+
 file = File.open(source_file,'r')
 new_file = CSV.open(target_file, "wb",{:quote_char => " "})
 

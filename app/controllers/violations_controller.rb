@@ -1,0 +1,3 @@
+class ViolationsController < ApplicationController
+	
+end
