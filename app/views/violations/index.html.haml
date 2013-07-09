@@ -1,0 +1,86 @@
+%h1
+    this is the violations index page
+
+%form{action:'/violations', method:'get'}
+    %input{name:'zip',type:'text'}
+    %button{type:'submit'}
+        submit
+
+%table#main_table
+    %thead
+        %tr
+            %th
+                dba
+            %th
+                boro
+            %th
+                building
+            %th
+                street
+            %th
+                zipcode
+            %th
+                phone
+            %th
+                cuisinecode
+            %th
+                phone
+            %th
+                inspdate
+            %th
+                violcode
+            %th
+                score
+            %th
+                currentgrade
+            %th
+                gradedate
+            %th
+                recordate
+    %tbody
+        - if @violations 
+            - @violations.each do |v|
+                %tr.row
+                    %td.dba
+                        =v.DBA.to_s
+                    %td.boro 
+                        =v.BORO.to_s
+                    %td.building
+                        =v.BUILDING.to_s
+                    %td.street
+                        =v.STREET.to_s
+                    %td.zipcode
+                        =v.ZIPCODE.to_s
+                    %td.phone
+                        =v.PHONE.to_s
+                    %td.cuisinecode
+                        =v.CUISINECODE.to_s
+                    %td.inspdate
+                        =v.INSPDATE.to_s
+                    %td.action
+                        =v.ACTION.to_s
+                    %td.violcode
+                        =v.VIOLCODE.to_s
+                    %td.score
+                        =v.SCORE.to_s
+                    %td.currentgrade
+                        =v.CURRENTGRADE.to_s
+                    %td.gradedate
+                        =v.GRADEDATE.to_s
+                    %td.recorddate
+                        =v.RECORDDATE.to_s
+        - else
+            %tr
+                %td
+                    No data.
+
+
+
+
+
+
+
+
+
+
+
